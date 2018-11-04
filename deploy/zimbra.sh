@@ -38,8 +38,16 @@ zimbra_deploy() {
   #if it verifies we can deploy it
   cp -f "$_ckey" /opt/zimbra/ssl/zimbra/commercial/commercial.key
   /opt/zimbra/bin/zmcertmgr deploycrt comm "$_ccert" "${_cca}.real" || return 1
-  /opt/zimbra/bin/zmmailboxdctl reload
-  /opt/zimbra/bin/zmproxyctl reload
-  /opt/zimbra/bin/zmmtactl reload
+  
+  # %%% ldap wasn't being restarted leading to failed communication in the future
+  # Adding a ldap restart was not tested so perhaps. Reload is restart when not defined by zimbra.
+  #/opt/zimbra/bin/ldap reload
+  
+  #/opt/zimbra/bin/zmmailboxdctl reload
+  #/opt/zimbra/bin/zmproxyctl reload
+  #/opt/zimbra/bin/zmmtactl reload
+  
+  # Recommended by Zimbra for certificate reloads
+  /opt/zimbra/bin/zmcontrol restart
   return 0
 }
