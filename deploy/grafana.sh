@@ -20,8 +20,12 @@ grafana_deploy() {
   _debug _cca "$_cca"
   _debug _cfullchain "$_cfullchain"
 
+  /bin/logger -p local2.info NETWORK "Certificate has been Renewed for $_cdomain"
   cp -f "$_ckey" /etc/grafana/certs/certkey.key
   cp -f "$_ccert" /etc/grafana/certs/fullchain.cer
+  # needs entry /etc/sudoers.d/
+  # %thisuser ALL=NOPASSWD:/etc/init.d/grafana-server
+  /etc/init.d/grafana-server restart
 
   return 0
 
