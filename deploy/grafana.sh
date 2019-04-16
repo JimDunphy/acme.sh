@@ -25,7 +25,8 @@ grafana_deploy() {
   cp -f "$_ccert" /etc/grafana/certs/fullchain.cer
   # needs entry /etc/sudoers.d/
   # %thisuser ALL=NOPASSWD:/etc/init.d/grafana-server
-  /etc/init.d/grafana-server restart
+  # --- RHEL 6/centos 6 specific (uncomment out)
+  #/etc/init.d/grafana-server restart
 
   return 0
 

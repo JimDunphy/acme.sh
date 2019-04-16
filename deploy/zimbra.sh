@@ -4,6 +4,11 @@
 #    1) acme.sh is installed as Zimbra
 #    2) see: https://wiki.zimbra.com/wiki/index.php?curid=2441
 # Related Questions to users: JDunphy and seidler in forums.zimbra.org
+#
+# Note: If you follow the automatic DNS method, renewals will be automatic
+#   provided you leave the default crontab entry for Zimbra that acme.sh installed automatically
+# 18 0 * * * "/opt/zimbra/.acme.sh"/acme.sh --cron --home "/opt/zimbra/.acme.sh" > /dev/null
+#
 
 ########  Public functions #####################
 

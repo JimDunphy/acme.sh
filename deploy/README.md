@@ -296,3 +296,11 @@ You can then deploy the certificate as follows
 ```sh
 acme.sh --deploy -d www.mydomain.com --deploy-hook gitlab
 ```
+
+## 11. Deploy your cert to Zimbra 
+
+```sh
+acme.sh --deploy --deploy-hook zimbra --dns dns_cf -d mail.example.com -d mail.example.net -d mail.example.org
+```
+
+Caveat: Requires that acme.sh is installed as the zimbra users.  Ref: https://wiki.zimbra.com/wiki/index.php?curid=2441
