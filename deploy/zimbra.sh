@@ -2,7 +2,7 @@
 
 # Zimbra Assumptions:
 #    1) acme.sh is installed as Zimbra
-#    2) see: https://wiki.zimbra.com/wiki/index.php?curid=2441
+#    2) see: https://wiki.zimbra.com/wiki/JDunphy-Letsencrypt
 # Related Questions to users: JDunphy and seidler in forums.zimbra.org
 #
 # Note: If you follow the automatic DNS method, renewals will be automatic
