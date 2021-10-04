@@ -36,7 +36,7 @@ zimbra_deploy() {
    /opt/zimbra/bin/zmcertmgr verifycrt comm "$_ckey" "$_ccert" "${_cca}.real" || return 1
 
    #if it verifies we can deploy it
-   /bin/logger -p local2.info NETWORK "Certificate has been Renewed for $_cdomain"
+   $(which logger) -p local2.info NETWORK "Certificate has been Renewed for $_cdomain"
    cp -f "$_ckey" /opt/zimbra/ssl/zimbra/commercial/commercial.key
    /opt/zimbra/bin/zmcertmgr deploycrt comm "$_ccert" "${_cca}.real" || return 1
    #/opt/zimbra/bin/ldap restart
