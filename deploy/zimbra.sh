@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # Zimbra Assumptions:
 #    1) acme.sh is installed as Zimbra
